@@ -1,0 +1,1 @@
+# resonate-cx-contacts-app
