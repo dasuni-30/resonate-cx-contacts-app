@@ -1,70 +1,111 @@
-# Getting Started with Create React App
+# 📇 Resonate CX Contacts App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A responsive and visually appealing React application that displays a list of contacts using data from [JSONPlaceholder](https://jsonplaceholder.typicode.com/users).
 
-## Available Scripts
+This app allows users to browse and search through contacts with a modern UI, using React, Tailwind CSS, and Framer Motion.
 
-In the project directory, you can run:
+---
 
-### `npm start`
+## 🚀 Getting Started
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### ✅ Prerequisites
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- Node.js (v14 or later)
+- npm or yarn
 
-### `npm test`
+---
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### 🔧 Installation & Setup
 
-### `npm run build`
+1. **Clone the Repository**
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+```bash
+git clone https://github.com/dasuni-30/resonate-cx-contacts-app.git
+cd resonate-cx-contacts-app
+```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+2. **Install Dependencies**
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+```bash
+npm install
+# or
+yarn install
+```
 
-### `npm run eject`
+3. **Install Tailwind CSS and Related Tools**
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+```bash
+npm install -D tailwindcss postcss autoprefixer
+npx tailwindcss init -p
+```
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+4. **Install Framer Motion**
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+```bash
+npm install framer-motion
+```
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+5. **Configure Tailwind**
 
-## Learn More
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+In tailwind.config.js, add:
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+```js
+module.exports = {
+  content: [
+    "./src/**/*.{js,jsx,ts,tsx}"
+  ],
+  theme: {
+    extend: {},
+  },
+  plugins: [],
+}
+```
 
-### Code Splitting
+6. **Configure PostCSS (Optional)**
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+Make sure postcss.config.js contains:
 
-### Analyzing the Bundle Size
+```js
+module.exports = {
+  plugins: {
+    tailwindcss: {},
+    autoprefixer: {},
+  },
+}
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+7. **Add Tailwind Directives**
 
-### Making a Progressive Web App
+In your src/index.css or src/App.css, add:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+```css
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+```
 
-### Advanced Configuration
+8. **Start the Development Server**
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+```bash
+npm start
+# or
+yarn start
+```
 
-### Deployment
+The app will run at: http://localhost:3000
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+📁 **Project Structure**
+```csharp
+resonate-cx-contacts-app/
+├── public/
+├── src/
+│   ├── api/                 # (optional) API abstraction
+│   ├── App.js               # Main component
+│   ├── App.css              # Custom styles
+│   ├── index.css            # Tailwind base styles
+│   └── index.js             # Entry point
+├── tailwind.config.js       # Tailwind config
+├── postcss.config.js        # PostCSS config
+└── package.json
+```
